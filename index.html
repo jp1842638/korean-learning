@@ -1,9 +1,129 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>My Web Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Korean - 한국어 배우기</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Welcome to My Web Page</h1>
-    <p>This is a simple HTML page.</p>
+    <!-- Nickname Modal -->
+    <div id="nickname-modal" class="modal">
+        <div class="modal-content">
+            <h2>Welcome to Learn Korean! 🇰🇷</h2>
+            <p>What should we call you?</p>
+            <input type="text" id="nickname-input" placeholder="Enter your nickname" maxlength="20">
+            <button id="nickname-submit" class="btn-primary">Start Learning!</button>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="app" class="hidden">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🇰🇷</span>
+                <span class="logo-text">Learn Korean</span>
+            </div>
+            <div class="user-info">
+                <span id="user-greeting">Hello, <span id="display-name"></span>!</span>
+                <button id="change-nickname" class="btn-small">Change Name</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard View -->
+            <div id="dashboard-view" class="view">
+                <h1>Choose a Chapter</h1>
+                <p class="subtitle">Master Korean step by step!</p>
+                <div id="chapters-container" class="chapters-grid">
+                    <!-- Chapters will be dynamically generated -->
+                </div>
+            </div>
+
+            <!-- Chapter View (Stages) -->
+            <div id="chapter-view" class="view hidden">
+                <button id="back-to-dashboard" class="btn-back">← Back to Chapters</button>
+                <h1 id="chapter-title"></h1>
+                <p id="chapter-description" class="subtitle"></p>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="chapter-progress" class="progress-fill"></div>
+                    </div>
+                    <span id="progress-text">0/10 completed</span>
+                </div>
+                <div id="stages-container" class="stages-grid">
+                    <!-- Stages will be dynamically generated -->
+                </div>
+            </div>
+
+            <!-- Lesson View -->
+            <div id="lesson-view" class="view hidden">
+                <button id="back-to-chapter" class="btn-back">← Back to Stages</button>
+                <div class="lesson-header">
+                    <h2 id="lesson-title"></h2>
+                    <div class="lesson-progress">
+                        <div class="hearts">
+                            <span id="heart-1" class="heart">❤️</span>
+                            <span id="heart-2" class="heart">❤️</span>
+                            <span id="heart-3" class="heart">❤️</span>
+                        </div>
+                        <div class="lesson-progress-bar">
+                            <div id="lesson-progress-fill" class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="lesson-content" class="lesson-content">
+                    <!-- Lesson content will be dynamically generated -->
+                </div>
+            </div>
+
+            <!-- Mini Game View -->
+            <div id="minigame-view" class="view hidden">
+                <button id="back-from-game" class="btn-back">← Exit Game</button>
+                <div class="game-header">
+                    <h2 id="game-title"></h2>
+                    <div id="game-quest" class="game-quest"></div>
+                </div>
+                <canvas id="game-canvas" width="800" height="500"></canvas>
+                <div id="game-dialog" class="game-dialog hidden">
+                    <div class="dialog-content">
+                        <div class="dialog-speaker"></div>
+                        <div class="dialog-text"></div>
+                        <div class="dialog-options"></div>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <p>Use <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to move, <kbd>E</kbd> to interact</p>
+                </div>
+            </div>
+
+            <!-- Completion Modal -->
+            <div id="completion-modal" class="modal hidden">
+                <div class="modal-content completion">
+                    <div class="completion-stars">
+                        <span class="star" id="star-1">⭐</span>
+                        <span class="star" id="star-2">⭐</span>
+                        <span class="star" id="star-3">⭐</span>
+                    </div>
+                    <h2 id="completion-message"></h2>
+                    <p id="completion-subtitle"></p>
+                    <div class="completion-buttons">
+                        <button id="completion-continue" class="btn-primary">Continue</button>
+                        <button id="completion-retry" class="btn-secondary">Try Again</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="data/content.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/minigame.js"></script>
+    <script src="js/lessons.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

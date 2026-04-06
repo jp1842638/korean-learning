@@ -1,0 +1,865 @@
+/* ===== CSS Variables ===== */
+:root {
+    --primary-color: #58cc02;
+    --primary-dark: #46a302;
+    --secondary-color: #1cb0f6;
+    --secondary-dark: #1899d6;
+    --accent-color: #ff9600;
+    --danger-color: #ff4b4b;
+    --background-color: #235390;
+    --card-background: #ffffff;
+    --text-primary: #3c3c3c;
+    --text-secondary: #777777;
+    --text-light: #ffffff;
+    --border-color: #e5e5e5;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.2);
+    --border-radius: 16px;
+    --border-radius-small: 8px;
+}
+
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--background-color) 0%, #1a3d6d 100%);
+    min-height: 100vh;
+    color: var(--text-primary);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ===== Modal Styles ===== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: var(--card-background);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: var(--shadow);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content h2 {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.modal-content p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+.modal-content input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* ===== Button Styles ===== */
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 0 var(--primary-dark);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--primary-dark);
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 0 var(--secondary-dark);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-small {
+    background: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--text-light);
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-small:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-back {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Header Styles ===== */
+.header {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 2rem;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-light);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-light);
+}
+
+#display-name {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* ===== Main Content ===== */
+.main-content {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.view {
+    animation: fadeIn 0.3s ease;
+}
+
+.view h1 {
+    color: var(--text-light);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ===== Chapters Grid ===== */
+.chapters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.chapter-card {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.chapter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.chapter-card.locked {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.chapter-card.locked::after {
+    content: '🔒';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+}
+
+.chapter-number {
+    background: var(--primary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.chapter-card.locked .chapter-number {
+    background: var(--text-secondary);
+}
+
+.chapter-card h3 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.chapter-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.chapter-progress-mini {
+    background: var(--border-color);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.chapter-progress-mini .fill {
+    background: var(--primary-color);
+    height: 100%;
+    transition: width 0.3s;
+}
+
+.chapter-difficulty {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.difficulty-beginner { background: #e8f5e9; color: #2e7d32; }
+.difficulty-elementary { background: #e3f2fd; color: #1565c0; }
+.difficulty-intermediate { background: #fff3e0; color: #ef6c00; }
+.difficulty-upper-intermediate { background: #fce4ec; color: #c2185b; }
+.difficulty-advanced { background: #f3e5f5; color: #7b1fa2; }
+.difficulty-fluent { background: #ffebee; color: #c62828; }
+
+/* ===== Stages Grid ===== */
+.stages-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stage-row {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.stage-node {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.stage-node.completed {
+    background: var(--primary-color);
+    color: white;
+}
+
+.stage-node.current {
+    background: var(--accent-color);
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.stage-node.locked {
+    background: var(--text-secondary);
+    color: white;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.stage-node.minigame {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.stage-node.minigame::after {
+    content: '🎮';
+    position: absolute;
+    bottom: -25px;
+    font-size: 1rem;
+}
+
+.stage-node:hover:not(.locked) {
+    transform: translateY(-3px);
+}
+
+.stage-connector {
+    width: 4px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0 auto;
+}
+
+/* ===== Progress Bar ===== */
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary-color);
+    transition: width 0.5s ease;
+    border-radius: 10px;
+}
+
+#progress-text {
+    color: var(--text-light);
+    font-weight: bold;
+}
+
+/* ===== Lesson View ===== */
+.lesson-header {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
+.lesson-header h2 {
+    color: var(--text-light);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.lesson-progress {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.hearts {
+    display: flex;
+    gap: 5px;
+}
+
+.heart {
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+
+.heart.lost {
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+
+.lesson-progress-bar {
+    width: 200px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.lesson-content {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    min-height: 400px;
+}
+
+/* ===== Quiz Styles ===== */
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quiz-question {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.quiz-instruction {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.quiz-korean-text {
+    font-size: 2rem;
+    color: var(--text-primary);
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: var(--border-radius-small);
+}
+
+.quiz-romanization {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.quiz-options {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.quiz-option {
+    padding: 15px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.quiz-option:hover {
+    border-color: var(--secondary-color);
+    background: #f0f9ff;
+}
+
+.quiz-option.selected {
+    border-color: var(--secondary-color);
+    background: #e3f2fd;
+}
+
+.quiz-option.correct {
+    border-color: var(--primary-color);
+    background: #e8f5e9;
+}
+
+.quiz-option.incorrect {
+    border-color: var(--danger-color);
+    background: #ffebee;
+}
+
+/* Word Card Styles */
+.word-card {
+    text-align: center;
+    padding: 30px;
+}
+
+.word-card-korean {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.word-card-romanization {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.word-card-meaning {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.word-card-forms {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.form-box {
+    padding: 15px 25px;
+    border-radius: var(--border-radius-small);
+    text-align: center;
+}
+
+.form-box.formal {
+    background: #e3f2fd;
+    border: 2px solid var(--secondary-color);
+}
+
+.form-box.informal {
+    background: #fff3e0;
+    border: 2px solid var(--accent-color);
+}
+
+.form-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.form-text {
+    font-size: 1.3rem;
+}
+
+/* Fill in the Blank */
+.fill-blank-sentence {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 30px 0;
+    line-height: 2;
+}
+
+.blank-space {
+    display: inline-block;
+    min-width: 100px;
+    border-bottom: 3px solid var(--secondary-color);
+    margin: 0 5px;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.word-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.word-bank-item {
+    padding: 10px 20px;
+    background: #f5f5f5;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.word-bank-item:hover {
+    background: #e3f2fd;
+    border-color: var(--secondary-color);
+}
+
+.word-bank-item.used {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Submit Button */
+.quiz-submit {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+/* ===== Mini Game Styles ===== */
+.game-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-header h2 {
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.game-quest {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: var(--border-radius-small);
+    color: var(--text-light);
+    display: inline-block;
+}
+
+#game-canvas {
+    display: block;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    background: #2d5a27;
+}
+
+.game-dialog {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card-background);
+    padding: 20px 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    width: 90%;
+    z-index: 100;
+}
+
+.dialog-speaker {
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.dialog-text {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.dialog-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dialog-option {
+    padding: 12px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dialog-option:hover {
+    background: #f0f9ff;
+    border-color: var(--secondary-color);
+}
+
+.game-controls {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--text-light);
+}
+
+.game-controls kbd {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 0 3px;
+    font-family: monospace;
+}
+
+/* ===== Completion Modal ===== */
+.modal-content.completion {
+    padding: 50px 40px;
+}
+
+.completion-stars {
+    margin-bottom: 20px;
+}
+
+.completion-stars .star {
+    font-size: 3rem;
+    margin: 0 5px;
+    opacity: 0.3;
+    transition: all 0.5s;
+}
+
+.completion-stars .star.earned {
+    opacity: 1;
+    animation: starPop 0.5s ease;
+}
+
+@keyframes starPop {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+.completion-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .chapters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .view h1 {
+        font-size: 1.8rem;
+    }
+
+    .stage-node {
+        width: 55px;
+        height: 55px;
+        font-size: 1.2rem;
+    }
+
+    .lesson-content {
+        padding: 20px;
+    }
+
+    .quiz-korean-text {
+        font-size: 1.5rem;
+    }
+
+    .word-card-korean {
+        font-size: 3rem;
+    }
+
+    .word-card-forms {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #game-canvas {
+        width: 100%;
+        height: auto;
+    }
+
+    .completion-buttons {
+        flex-direction: column;
+    }
+}
+
+/* ===== Animations ===== */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.3s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.bounce {
+    animation: bounce 0.5s ease;
+}
