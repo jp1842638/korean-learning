@@ -93,6 +93,82 @@ const MiniGame = {
         document.addEventListener('keyup', (e) => {
             this.keys[e.key.toLowerCase()] = false;
         });
+
+        // Set up virtual controller for mobile
+        this.setupVirtualController();
+    },
+
+    // Set up virtual controller for touch devices
+    setupVirtualController() {
+        const dpadButtons = document.querySelectorAll('.dpad-btn[data-key]');
+        const interactBtn = document.getElementById('interact-btn');
+
+        // Handle D-pad buttons
+        dpadButtons.forEach(btn => {
+            const key = btn.dataset.key;
+
+            // Touch events
+            btn.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                if (!this.isRunning) return;
+                this.keys[key] = true;
+                btn.classList.add('active');
+            }, { passive: false });
+
+            btn.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                this.keys[key] = false;
+                btn.classList.remove('active');
+            }, { passive: false });
+
+            btn.addEventListener('touchcancel', (e) => {
+                this.keys[key] = false;
+                btn.classList.remove('active');
+            });
+
+            // Mouse events for testing on desktop
+            btn.addEventListener('mousedown', (e) => {
+                if (!this.isRunning) return;
+                this.keys[key] = true;
+                btn.classList.add('active');
+            });
+
+            btn.addEventListener('mouseup', (e) => {
+                this.keys[key] = false;
+                btn.classList.remove('active');
+            });
+
+            btn.addEventListener('mouseleave', (e) => {
+                this.keys[key] = false;
+                btn.classList.remove('active');
+            });
+        });
+
+        // Handle interact button
+        if (interactBtn) {
+            interactBtn.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                if (!this.isRunning || this.dialogActive) return;
+                this.checkInteraction();
+                interactBtn.classList.add('active');
+            }, { passive: false });
+
+            interactBtn.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                interactBtn.classList.remove('active');
+            }, { passive: false });
+
+            // Mouse events for testing
+            interactBtn.addEventListener('mousedown', (e) => {
+                if (!this.isRunning || this.dialogActive) return;
+                this.checkInteraction();
+                interactBtn.classList.add('active');
+            });
+
+            interactBtn.addEventListener('mouseup', (e) => {
+                interactBtn.classList.remove('active');
+            });
+        }
     },
 
     // Main game loop

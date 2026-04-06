@@ -100,7 +100,20 @@
                     </div>
                 </div>
                 <div class="game-controls">
-                    <p>Use <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to move, <kbd>E</kbd> to interact</p>
+                    <p class="desktop-controls">Use <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to move, <kbd>E</kbd> to interact</p>
+                </div>
+                <!-- Mobile Virtual Controller -->
+                <div id="virtual-controller" class="virtual-controller">
+                    <div class="controller-dpad">
+                        <button class="dpad-btn dpad-up" data-key="w">▲</button>
+                        <div class="dpad-middle">
+                            <button class="dpad-btn dpad-left" data-key="a">◀</button>
+                            <button class="dpad-btn dpad-center" disabled></button>
+                            <button class="dpad-btn dpad-right" data-key="d">▶</button>
+                        </div>
+                        <button class="dpad-btn dpad-down" data-key="s">▼</button>
+                    </div>
+                    <button class="action-btn" id="interact-btn">E</button>
                 </div>
             </div>
 
