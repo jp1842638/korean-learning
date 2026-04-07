@@ -306,8 +306,10 @@ const MiniGame = {
                 this.ctx.fillText('!', npc.x, npc.y - 25);
             }
 
-            // Draw completed indicator
-            if (this.completedQuests.includes(npc.id)) {
+            // Draw completed indicator - check if all quests for this NPC are completed
+            const npcQuests = this.quests.filter(q => q.npc === npc.id);
+            const completedNpcQuests = npcQuests.filter(q => this.completedQuests.includes(q.id));
+            if (completedNpcQuests.length > 0 && completedNpcQuests.length === npcQuests.length && !isQuestTarget) {
                 this.ctx.fillStyle = '#58cc02';
                 this.ctx.font = 'bold 20px Arial';
                 this.ctx.textAlign = 'center';
@@ -386,7 +388,8 @@ const MiniGame = {
     // Check if NPC is the current quest target
     isCurrentQuestTarget(npcId) {
         if (this.currentQuest >= this.quests.length) return false;
-        return this.quests[this.currentQuest].npc === npcId && !this.completedQuests.includes(npcId);
+        const currentQuestData = this.quests[this.currentQuest];
+        return currentQuestData.npc === npcId && !this.completedQuests.includes(currentQuestData.id);
     },
 
     // Get nearby NPC
@@ -425,12 +428,12 @@ const MiniGame = {
         speakerEl.textContent = npc.name;
         textEl.textContent = npc.dialog;
 
-        // Check if this NPC has a quest
-        const quest = this.quests.find(q => q.npc === npc.id && !this.completedQuests.includes(npc.id));
+        // Check if this NPC has the current quest
+        const currentQuestData = this.currentQuest < this.quests.length ? this.quests[this.currentQuest] : null;
         
-        if (quest && this.currentQuest < this.quests.length && this.quests[this.currentQuest].npc === npc.id) {
+        if (currentQuestData && currentQuestData.npc === npc.id && !this.completedQuests.includes(currentQuestData.id)) {
             // Show quest options
-            optionsEl.innerHTML = quest.options.map((option, index) => `
+            optionsEl.innerHTML = currentQuestData.options.map((option, index) => `
                 <div class="dialog-option" onclick="MiniGame.selectDialogOption('${option}', ${index})">
                     ${option}
                 </div>
@@ -453,7 +456,7 @@ const MiniGame = {
         
         if (option === quest.correctAnswer) {
             // Correct answer!
-            this.completedQuests.push(quest.npc);
+            this.completedQuests.push(quest.id);
             this.currentQuest++;
             
             // Show success message

@@ -2702,9 +2702,9 @@ const LessonContent = {
                         {
                             id: 2,
                             npc: "excited_friend",
-                            task: "Say you're also excited",
-                            correctAnswer: "저도 신나요!",
-                            options: ["저도 신나요!", "저도 슬퍼요!", "저도 피곤해요!"]
+                            task: "Say you're also excited (to your friend)",
+                            correctAnswer: "나도 신나!",
+                            options: ["나도 신나!", "나도 슬퍼!", "나도 피곤해!"]
                         },
                         {
                             id: 3,
@@ -3378,7 +3378,7 @@ const LessonContent = {
                             type: "word-card",
                             korean: "마감일",
                             romanization: "magamil",
-                            meaning: "Deadline",
+                            meaning: "Expiring date",
                             audio: null
                         },
                         {
@@ -3400,7 +3400,7 @@ const LessonContent = {
                             question: "What does '마감일' mean?",
                             korean: "마감일",
                             romanization: "magamil",
-                            options: ["Meeting", "Report", "Deadline", "Business trip"],
+                            options: ["Meeting", "Report", "Expiring date", "Business trip"],
                             correct: 2
                         },
                         {
@@ -3559,7 +3559,7 @@ const LessonContent = {
                             type: "multiple-choice",
                             question: "What does '마감일' mean?",
                             korean: "마감일",
-                            options: ["Meeting", "Report", "Deadline", "Business trip"],
+                            options: ["Meeting", "Report", "Expiring date", "Business trip"],
                             correct: 2
                         },
                         {
@@ -3592,8 +3592,8 @@ const LessonContent = {
             title: "Number Market",
             mapType: "market",
             npcs: [
-                { id: "shopkeeper", name: "Shopkeeper", sprite: "shopkeeper", x: 300, y: 200, dialog: "Welcome to my shop!" },
-                { id: "customer", name: "Customer", sprite: "customer", x: 500, y: 350, dialog: "Excuse me..." }
+                { id: "shopkeeper", name: "Shopkeeper", sprite: "shopkeeper", x: 300, y: 200, dialog: "How many apples do you want? Count them in Korean!" },
+                { id: "customer", name: "Customer", sprite: "customer", x: 500, y: 350, dialog: "What's the price? Tell me in Korean numbers!" }
             ]
         },
         restaurant_adventure: {

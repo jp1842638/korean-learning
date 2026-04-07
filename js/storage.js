@@ -49,6 +49,11 @@ const StorageManager = {
         return this.getNickname() !== null && this.getNickname() !== '';
     },
 
+    // Check if current user is Admin (case-sensitive)
+    isAdmin() {
+        return this.getNickname() === 'Admin';
+    },
+
     // Progress methods
     getProgress() {
         const saved = localStorage.getItem(this.KEYS.PROGRESS);
@@ -70,12 +75,20 @@ const StorageManager = {
 
     // Check if chapter is unlocked
     isChapterUnlocked(chapterId) {
+        // Admin has access to all chapters
+        if (this.isAdmin()) {
+            return true;
+        }
         const progress = this.getProgress();
         return progress.chapters[chapterId]?.unlocked || false;
     },
 
     // Check if stage is unlocked
     isStageUnlocked(chapterId, stageId) {
+        // Admin has access to all stages
+        if (this.isAdmin()) {
+            return true;
+        }
         const progress = this.getProgress();
         return progress.chapters[chapterId]?.stages[stageId]?.unlocked || false;
     },
