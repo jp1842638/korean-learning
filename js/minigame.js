@@ -426,7 +426,20 @@ const MiniGame = {
         const optionsEl = dialogBox.querySelector('.dialog-options');
 
         speakerEl.textContent = npc.name;
-        textEl.textContent = npc.dialog;
+        
+        // Handle array dialog (multiple lines)
+        let dialogText;
+        if (Array.isArray(npc.dialog)) {
+            if (!this.npcDialogIndex) this.npcDialogIndex = {};
+            if (this.npcDialogIndex[npc.id] === undefined) this.npcDialogIndex[npc.id] = 0;
+            
+            dialogText = npc.dialog[this.npcDialogIndex[npc.id]];
+            // Move to next dialog on next interaction
+            this.npcDialogIndex[npc.id] = (this.npcDialogIndex[npc.id] + 1) % npc.dialog.length;
+        } else {
+            dialogText = npc.dialog;
+        }
+        textEl.textContent = dialogText;
 
         // Check if this NPC has the current quest
         const currentQuestData = this.currentQuest < this.quests.length ? this.quests[this.currentQuest] : null;

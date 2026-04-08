@@ -17,6 +17,8 @@ const QuizSystem = {
         this.correctAnswers = 0;
         this.selectedAnswer = null;
         this.isAnswered = false;
+        // Count only actual quiz questions (not word-cards)
+        this.totalQuizQuestions = questions.filter(q => q.type !== 'word-card').length;
         this.updateHeartsDisplay();
         this.updateProgressBar();
     },
@@ -134,6 +136,7 @@ const QuizSystem = {
     // Render multiple choice question
     renderMultipleChoice(container, question) {
         const questionText = question.question || 'Select the correct answer:';
+        const pronunciation = question.pronunciation || question.korean;
         
         container.innerHTML = `
             <div class="quiz-container">
@@ -141,6 +144,7 @@ const QuizSystem = {
                 ${question.korean ? `
                     <div class="quiz-korean-text">${question.korean}</div>
                     ${question.romanization ? `<p class="quiz-romanization">${question.romanization}</p>` : ''}
+                    <button class="" onclick="playKoreanAudio('${question.korean.replace(/'/g, "\\'")}', '${pronunciation.replace(/'/g, "\\'")}')">🔊 Listen</button>
                 ` : ''}
                 <div class="quiz-options">
                     ${question.options.map((option, index) => `
@@ -339,7 +343,10 @@ const QuizSystem = {
 
     // Calculate stars based on performance
     calculateStars() {
-        const percentage = this.correctAnswers / this.questions.length;
+        // Use only actual quiz questions count (not word-cards)
+        const totalQuestions = this.totalQuizQuestions || this.questions.filter(q => q.type !== 'word-card').length;
+        if (totalQuestions === 0) return 3; // All word-cards = perfect score
+        const percentage = this.correctAnswers / totalQuestions;
         if (percentage >= 0.9) return 3;
         if (percentage >= 0.7) return 2;
         if (percentage >= 0.5) return 1;
@@ -357,7 +364,13 @@ const QuizSystem = {
         const subtitle = document.getElementById('completion-subtitle');
 
         message.textContent = `Congrats, ${nickname}!`;
-        subtitle.textContent = `You got ${this.correctAnswers} out of ${this.questions.length} correct!`;
+        // Use only actual quiz questions count (not word-cards)
+        const totalQuestions = this.totalQuizQuestions || this.questions.filter(q => q.type !== 'word-card').length;
+        if (totalQuestions === 0) {
+            subtitle.textContent = `You learned ${this.questions.length} new words!`;
+        } else {
+            subtitle.textContent = `You got ${this.correctAnswers} out of ${totalQuestions} correct!`;
+        }
 
         // Show stars with animation
         for (let i = 1; i <= 3; i++) {

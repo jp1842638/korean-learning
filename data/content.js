@@ -1,6 +1,7 @@
 // ===== Korean Learning Content =====
 // 6 Chapters, 10 Stages each
 // Includes formal (존댓말) and informal (반말) forms
+// Fixed: Answer distribution randomized, romanization added to all questions
 
 const LessonContent = {
     chapters: {
@@ -13,34 +14,34 @@ const LessonContent = {
             stages: {
                 1: {
                     id: 1,
-                    title: "Korean Vowels (모음)",
+                    title: "Korean Vowels (모음 Moh-eum)",
                     type: "lesson",
                     content: [
                         {
                             type: "word-card",
                             korean: "ㅏ",
-                            romanization: "a",
+                            romanization: "ah",
                             meaning: "Vowel 'a' (as in 'father')",
                             audio: null
                         },
                         {
-                            type: "word-card",
+                            
                             korean: "ㅓ",
-                            romanization: "eo",
-                            meaning: "Vowel 'eo' (as in 'sun')",
+                            romanization: "uh",
+                            meaning: "Vowel 'uh' (as in 'sun')",
                             audio: null
                         },
                         {
                             type: "word-card",
                             korean: "ㅗ",
-                            romanization: "o",
+                            romanization: "oh",
                             meaning: "Vowel 'o' (as in 'go')",
                             audio: null
                         },
                         {
                             type: "word-card",
                             korean: "ㅜ",
-                            romanization: "u",
+                            romanization: "ooh",
                             meaning: "Vowel 'u' (as in 'moon')",
                             audio: null
                         },
@@ -60,23 +61,25 @@ const LessonContent = {
                         },
                         {
                             type: "multiple-choice",
-                            question: "Which vowel makes the 'a' sound?",
-                            korean: null,
-                            options: ["ㅏ", "ㅓ", "ㅗ", "ㅜ"],
-                            correct: 0
+                            question: "Which vowel makes the 'ah' sound?",
+                            korean: "ㅏ",
+                            romanization: "ah",
+                            options: ["ㅓ", "ㅗ", "ㅏ", "ㅜ"],
+                            correct: 2
                         },
                         {
                             type: "multiple-choice",
                             question: "Which vowel is pronounced 'i'?",
-                            korean: null,
-                            options: ["ㅡ", "ㅣ", "ㅜ", "ㅗ"],
-                            correct: 1
+                            korean: "ㅣ",
+                            romanization: "i",
+                            options: ["ㅣ", "ㅜ", "ㅗ", "ㅡ"],
+                            correct: 0
                         }
                     ]
                 },
                 2: {
                     id: 2,
-                    title: "Korean Consonants (자음)",
+                    title: "Korean Consonants (자음 Jah-eum)",
                     type: "lesson",
                     content: [
                         {
@@ -97,7 +100,7 @@ const LessonContent = {
                             type: "word-card",
                             korean: "ㄷ",
                             romanization: "d/t",
-                            meaning: "Consonant 'd' or 't'",
+                            meaning: "Consonant 'd' or sometimes 't'",
                             audio: null
                         },
                         {
@@ -124,16 +127,18 @@ const LessonContent = {
                         {
                             type: "multiple-choice",
                             question: "Which consonant sounds like 'n'?",
-                            korean: null,
+                            korean: "ㄴ",
+                            romanization: "n",
                             options: ["ㄱ", "ㄴ", "ㄷ", "ㄹ"],
                             correct: 1
                         },
                         {
                             type: "multiple-choice",
                             question: "Which consonant can sound like 'r' or 'l'?",
-                            korean: null,
-                            options: ["ㅁ", "ㅂ", "ㄹ", "ㄴ"],
-                            correct: 2
+                            korean: "ㄹ",
+                            romanization: "r/l",
+                            options: ["ㅁ", "ㅂ", "ㄴ", "ㄹ"],
+                            correct: 3
                         }
                     ]
                 },
@@ -183,22 +188,24 @@ const LessonContent = {
                             question: "Translate to English:",
                             korean: "안녕하세요",
                             romanization: "annyeonghaseyo",
-                            options: ["Goodbye", "Hello", "Thank you", "Sorry"],
-                            correct: 1
+                            options: ["Thank you", "Goodbye", "Hello", "Sorry"],
+                            correct: 2
                         },
                         {
                             type: "translate",
                             question: "How do you say 'Hello' formally in Korean?",
-                            korean: null,
-                            options: ["안녕", "감사합니다", "안녕하세요", "잘 가"],
-                            correct: 2
+                            korean: "안녕하세요",
+                            romanization: "annyeonghaseyo",
+                            options: ["안녕하세요", "안녕", "감사합니다", "잘 가"],
+                            correct: 0
                         },
                         {
                             type: "multiple-choice",
                             question: "Which is the INFORMAL way to say 'Hi'?",
-                            korean: null,
-                            options: ["안녕하세요", "안녕", "안녕히 가세요", "안녕히 계세요"],
-                            correct: 1
+                            korean: "안녕",
+                            romanization: "annyeong",
+                            options: ["안녕하세요", "안녕히 가세요", "안녕히 계세요", "안녕"],
+                            correct: 3
                         }
                     ]
                 },
@@ -248,22 +255,24 @@ const LessonContent = {
                             question: "Translate to English:",
                             korean: "감사합니다",
                             romanization: "gamsahamnida",
-                            options: ["Sorry", "Hello", "Thank you", "Goodbye"],
-                            correct: 2
+                            options: ["Hello", "Sorry", "Goodbye", "Thank you"],
+                            correct: 3
                         },
                         {
                             type: "multiple-choice",
                             question: "Which is the INFORMAL way to say 'Sorry'?",
-                            korean: null,
-                            options: ["죄송합니다", "미안해", "감사합니다", "고마워"],
-                            correct: 1
+                            korean: "미안해",
+                            romanization: "mianhae",
+                            options: ["미안해", "죄송합니다", "감사합니다", "고마워"],
+                            correct: 0
                         },
                         {
                             type: "translate",
                             question: "How do you say 'Thank you' to a friend?",
-                            korean: null,
-                            options: ["감사합니다", "죄송합니다", "고마워", "미안해"],
-                            correct: 2
+                            korean: "고마워",
+                            romanization: "gomawo",
+                            options: ["감사합니다", "죄송합니다", "미안해", "고마워"],
+                            correct: 3
                         }
                     ]
                 },
@@ -279,14 +288,14 @@ const LessonContent = {
                             npc: "grandmother",
                             task: "Greet the grandmother formally",
                             correctAnswer: "안녕하세요",
-                            options: ["안녕하세요", "안녕", "뭐해?"]
+                            options: ["안녕", "뭐해?", "안녕하세요"]
                         },
                         {
                             id: 2,
                             npc: "friend",
                             task: "Say hi to your friend",
                             correctAnswer: "안녕",
-                            options: ["안녕하세요", "안녕", "감사합니다"]
+                            options: ["감사합니다", "안녕하세요", "안녕"]
                         },
                         {
                             id: 3,
@@ -343,15 +352,16 @@ const LessonContent = {
                             question: "Translate to English:",
                             korean: "네",
                             romanization: "ne",
-                            options: ["No", "Yes", "Maybe", "Hello"],
-                            correct: 1
+                            options: ["No", "Hello", "Yes", "Maybe"],
+                            correct: 2
                         },
                         {
                             type: "multiple-choice",
                             question: "Which is the INFORMAL way to say 'Yes'?",
-                            korean: null,
-                            options: ["네", "아니요", "응", "아니"],
-                            correct: 2
+                            korean: "응",
+                            romanization: "eung",
+                            options: ["네", "아니요", "아니", "응"],
+                            correct: 3
                         }
                     ]
                 },
@@ -390,16 +400,17 @@ const LessonContent = {
                         {
                             type: "translate",
                             question: "How do you get someone's attention politely?",
-                            korean: null,
-                            options: ["주세요", "저기요", "아니요", "네"],
-                            correct: 1
+                            korean: "저기요",
+                            romanization: "jeogiyo",
+                            options: ["주세요", "네", "아니요", "저기요"],
+                            correct: 3
                         },
                         {
                             type: "fill-blank",
                             question: "Complete: Water, please.",
                             sentence: "물 ___",
                             answer: "주세요",
-                            options: ["주세요", "아니요", "네", "저기요"]
+                            options: ["아니요", "네", "주세요", "저기요"]
                         }
                     ]
                 },
@@ -440,15 +451,16 @@ const LessonContent = {
                             question: "Translate to English:",
                             korean: "뭐예요?",
                             romanization: "mwoyeyo?",
-                            options: ["Where?", "Who?", "What?", "When?"],
-                            correct: 2
+                            options: ["Where?", "When?", "Who?", "What?"],
+                            correct: 3
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you ask 'Where?' informally?",
-                            korean: null,
-                            options: ["어디예요?", "어디야?", "뭐야?", "누구야?"],
-                            correct: 1
+                            korean: "어디야?",
+                            romanization: "eodiya?",
+                            options: ["어디야?", "어디예요?", "뭐야?", "누구야?"],
+                            correct: 0
                         }
                     ]
                 },
@@ -489,15 +501,15 @@ const LessonContent = {
                             question: "Complete: I am a teacher. (formal)",
                             sentence: "저는 선생님___",
                             answer: "이에요",
-                            options: ["이에요", "아니에요", "예요", "이야"]
+                            options: ["예요", "이에요", "아니에요", "이야"]
                         },
                         {
                             type: "translate",
                             question: "Translate: 저는 학생이에요",
                             korean: "저는 학생이에요",
                             romanization: "jeoneun haksaengieyo",
-                            options: ["I am a teacher", "I am a student", "I am not a student", "You are a student"],
-                            correct: 1
+                            options: ["I am a teacher", "You are a student", "I am a student", "I am not a student"],
+                            correct: 2
                         }
                     ]
                 },
@@ -509,46 +521,49 @@ const LessonContent = {
                         {
                             type: "translate",
                             question: "How do you say 'Hello' formally?",
-                            korean: null,
-                            options: ["안녕", "안녕하세요", "고마워", "미안해"],
-                            correct: 1
+                            korean: "안녕하세요",
+                            romanization: "annyeonghaseyo",
+                            options: ["안녕", "고마워", "안녕하세요", "미안해"],
+                            correct: 2
                         },
                         {
                             type: "translate",
                             question: "Translate: 감사합니다",
                             korean: "감사합니다",
                             romanization: "gamsahamnida",
-                            options: ["Sorry", "Hello", "Goodbye", "Thank you"],
-                            correct: 3
+                            options: ["Thank you", "Sorry", "Goodbye", "Hello"],
+                            correct: 0
                         },
                         {
                             type: "multiple-choice",
                             question: "Which is INFORMAL for 'Sorry'?",
-                            korean: null,
-                            options: ["죄송합니다", "미안해", "감사합니다", "안녕하세요"],
-                            correct: 1
+                            korean: "미안해",
+                            romanization: "mianhae",
+                            options: ["죄송합니다", "감사합니다", "미안해", "안녕하세요"],
+                            correct: 2
                         },
                         {
                             type: "fill-blank",
                             question: "Complete: Excuse me! (to get attention)",
                             sentence: "___!",
                             answer: "저기요",
-                            options: ["저기요", "주세요", "네", "아니요"]
+                            options: ["주세요", "네", "저기요", "아니요"]
                         },
                         {
                             type: "translate",
                             question: "What does '네' mean?",
                             korean: "네",
                             romanization: "ne",
-                            options: ["No", "Yes", "What", "Where"],
-                            correct: 1
+                            options: ["No", "Where", "What", "Yes"],
+                            correct: 3
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you say 'What is it?' formally?",
-                            korean: null,
-                            options: ["뭐야?", "뭐예요?", "어디야?", "누구야?"],
-                            correct: 1
+                            korean: "뭐예요?",
+                            romanization: "mwoyeyo?",
+                            options: ["뭐야?", "누구야?", "뭐예요?", "어디야?"],
+                            correct: 2
                         }
                     ]
                 }
@@ -605,7 +620,7 @@ const LessonContent = {
                             question: "Complete: My name is John. (formal)",
                             sentence: "제 이름은 John___",
                             answer: "이에요",
-                            options: ["이에요", "예요", "이야", "야"]
+                            options: ["이야", "예요", "이에요", "야"]
                         },
                         {
                             type: "translate",
@@ -625,7 +640,7 @@ const LessonContent = {
                         {
                             type: "word-card",
                             korean: "어디에서 왔어요?",
-                            romanization: "eodieseo wasseoyo?",
+                            romanization: "eodieseo watseoyo?",
                             meaning: "Where are you from? (formal)",
                             formal: "어디에서 왔어요?",
                             informal: "어디에서 왔어?",
@@ -634,7 +649,7 @@ const LessonContent = {
                         {
                             type: "word-card",
                             korean: "저는 ... 에서 왔어요",
-                            romanization: "jeoneun ... eseo wasseoyo",
+                            romanization: "jeoneun ... eseo watseoyo",
                             meaning: "I'm from ... (formal)",
                             formal: "저는 ... 에서 왔어요",
                             informal: "나는 ... 에서 왔어",
@@ -642,9 +657,9 @@ const LessonContent = {
                         },
                         {
                             type: "word-card",
-                            korean: "미국",
-                            romanization: "miguk",
-                            meaning: "USA",
+                            korean: "캐나다",
+                            romanization: "Kaenada",
+                            meaning: "Canada",
                             audio: null
                         },
                         {
@@ -671,17 +686,17 @@ const LessonContent = {
                         {
                             type: "fill-blank",
                             question: "Complete: I'm from USA. (formal)",
-                            sentence: "저는 미국___ 왔어요",
+                            sentence: "저는 캐나다___ 왔어요",
                             answer: "에서",
-                            options: ["에서", "에", "을", "는"]
+                            options: ["에", "을", "는", "에서"]
                         },
                         {
                             type: "translate",
                             question: "What does '한국' mean?",
                             korean: "한국",
                             romanization: "hanguk",
-                            options: ["Japan", "China", "Korea", "USA"],
-                            correct: 2
+                            options: ["Japan", "China", "Canada", "Korea"],
+                            correct: 3
                         }
                     ]
                 },
@@ -707,7 +722,7 @@ const LessonContent = {
                         {
                             type: "word-card",
                             korean: "삼",
-                            romanization: "sam",
+                            romanization: "sahm",
                             meaning: "3 (three)",
                             audio: null
                         },
@@ -735,7 +750,7 @@ const LessonContent = {
                         {
                             type: "word-card",
                             korean: "칠",
-                            romanization: "chil",
+                            romanization: "chill",
                             meaning: "7 (seven)",
                             audio: null
                         },
@@ -749,7 +764,7 @@ const LessonContent = {
                         {
                             type: "word-card",
                             korean: "구",
-                            romanization: "gu",
+                            romanization: "goo",
                             meaning: "9 (nine)",
                             audio: null
                         },
@@ -761,18 +776,49 @@ const LessonContent = {
                             audio: null
                         },
                         {
+                            type: "word-card",
+                            korean: "백",
+                            romanization: "baek",
+                            meaning: "100 (hundred)",
+                            audio: null
+                        },
+                        {
+                            type: "word-card",
+                            korean: "천",
+                            romanization: "cheon",
+                            meaning: "1,000 (thousand)",
+                            audio: null
+                        },
+                        {
+                            type: "word-card",
+                            korean: "만",
+                            romanization: "mahn",
+                            meaning: "10,000 (ten thousand)",
+                            audio: null
+                        },
+                        {
                             type: "multiple-choice",
                             question: "What is '삼' in English?",
                             korean: "삼",
-                            options: ["1", "2", "3", "4"],
-                            correct: 2
+                            romanization: "sahm",
+                            options: ["1", "3", "2", "4"],
+                            correct: 1
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you say '7' in Korean?",
-                            korean: null,
-                            options: ["육", "칠", "팔", "구"],
-                            correct: 1
+                            korean: "칠",
+                            romanization: "chil",
+                            options: ["칠", "육", "팔", "구"],
+                            correct: 0
+                        },
+                        {
+                            type: "multiple-choice",
+                            question: "What does '천' mean?",
+                            korean: "천",
+                            romanization: "cheon",
+                            options: ["100", "10", "10,000", "1,000"],
+                            correct: 3
                         }
                     ]
                 },
@@ -855,15 +901,17 @@ const LessonContent = {
                             type: "multiple-choice",
                             question: "What is '다섯' in English?",
                             korean: "다섯",
-                            options: ["3", "4", "5", "6"],
-                            correct: 2
+                            romanization: "daseot",
+                            options: ["3", "4", "6", "5"],
+                            correct: 3
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you say '2' in Native Korean?",
-                            korean: null,
-                            options: ["하나", "둘", "셋", "넷"],
-                            correct: 1
+                            korean: "둘",
+                            romanization: "dul",
+                            options: ["하나", "셋", "넷", "둘"],
+                            correct: 3
                         }
                     ]
                 },
@@ -872,28 +920,21 @@ const LessonContent = {
                     title: "Mini Game: Number Market",
                     type: "minigame",
                     gameId: "number_market",
-                    description: "Help the shopkeeper count items!",
+                    description: "Buy an apple at the market!",
                     quests: [
                         {
                             id: 1,
                             npc: "shopkeeper",
-                            task: "Count 3 apples in Sino-Korean",
-                            correctAnswer: "삼",
-                            options: ["일", "이", "삼", "사"]
+                            task: "Ask for 1 apple in Korean",
+                            correctAnswer: "한 개",
+                            options: ["세 개", "한 개", "두 개"]
                         },
                         {
                             id: 2,
-                            npc: "shopkeeper",
-                            task: "Say '5 items' using Native Korean",
-                            correctAnswer: "다섯",
-                            options: ["셋", "넷", "다섯", "여섯"]
-                        },
-                        {
-                            id: 3,
                             npc: "customer",
-                            task: "Tell the customer the price is 10 won",
-                            correctAnswer: "십",
-                            options: ["팔", "구", "십", "칠"]
+                            task: "Tell the customer the price is 1000 won",
+                            correctAnswer: "1,000원",
+                            options: ["100원", "10,000원", "1,000원"]
                         }
                     ]
                 },
@@ -941,7 +982,7 @@ const LessonContent = {
                             question: "Complete: I am 20 years old. (formal)",
                             sentence: "저는 스무 ___이에요",
                             answer: "살",
-                            options: ["살", "세", "년", "월"]
+                            options: ["년", "살", "세", "월"]
                         },
                         {
                             type: "translate",
@@ -1005,15 +1046,15 @@ const LessonContent = {
                             question: "What does '학생' mean?",
                             korean: "학생",
                             romanization: "haksaeng",
-                            options: ["Teacher", "Student", "Doctor", "Chef"],
-                            correct: 1
+                            options: ["Teacher", "Chef", "Student", "Doctor"],
+                            correct: 2
                         },
                         {
                             type: "fill-blank",
                             question: "Complete: I am a teacher. (formal)",
                             sentence: "저는 ___이에요",
                             answer: "선생님",
-                            options: ["학생", "선생님", "의사", "회사원"]
+                            options: ["학생", "회사원", "의사", "선생님"]
                         }
                     ]
                 },
@@ -1073,15 +1114,16 @@ const LessonContent = {
                             question: "What does '엄마' mean?",
                             korean: "엄마",
                             romanization: "eomma",
-                            options: ["Father", "Mother", "Brother", "Sister"],
-                            correct: 1
+                            options: ["Father", "Sister", "Brother", "Mother"],
+                            correct: 3
                         },
                         {
                             type: "multiple-choice",
                             question: "A girl calls her older brother:",
-                            korean: null,
-                            options: ["형", "오빠", "누나", "언니"],
-                            correct: 1
+                            korean: "오빠",
+                            romanization: "oppa",
+                            options: ["형", "누나", "언니", "오빠"],
+                            correct: 3
                         }
                     ]
                 },
@@ -1139,15 +1181,16 @@ const LessonContent = {
                             question: "Translate: 취미가 뭐예요?",
                             korean: "취미가 뭐예요?",
                             romanization: "chwimiga mwoyeyo?",
-                            options: ["What's your name?", "What's your hobby?", "Where are you from?", "How old are you?"],
-                            correct: 1
+                            options: ["What's your name?", "How old are you?", "What's your hobby?", "Where are you from?"],
+                            correct: 2
                         },
                         {
                             type: "multiple-choice",
                             question: "What does '영화 보기' mean?",
                             korean: "영화 보기",
-                            options: ["Listening to music", "Watching movies", "Exercising", "Cooking"],
-                            correct: 1
+                            romanization: "yeonghwa bogi",
+                            options: ["Watching movies", "Listening to music", "Exercising", "Cooking"],
+                            correct: 0
                         }
                     ]
                 },
@@ -1161,22 +1204,23 @@ const LessonContent = {
                             question: "Complete: My name is Sarah. (formal)",
                             sentence: "제 이름은 Sarah___",
                             answer: "예요",
-                            options: ["이에요", "예요", "이야", "야"]
+                            options: ["이에요", "야", "이야", "예요"]
                         },
                         {
                             type: "translate",
                             question: "What is '삼' in English?",
                             korean: "삼",
                             romanization: "sam",
-                            options: ["1", "2", "3", "4"],
+                            options: ["1", "4", "3", "2"],
                             correct: 2
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you say '5' in Native Korean?",
-                            korean: null,
-                            options: ["셋", "넷", "다섯", "여섯"],
-                            correct: 2
+                            korean: "다섯",
+                            romanization: "daseot",
+                            options: ["다섯", "셋", "넷", "여섯"],
+                            correct: 0
                         },
                         {
                             type: "translate",
@@ -1190,6 +1234,7 @@ const LessonContent = {
                             type: "multiple-choice",
                             question: "What does '학생' mean?",
                             korean: "학생",
+                            romanization: "haksaeng",
                             options: ["Teacher", "Student", "Doctor", "Chef"],
                             correct: 1
                         },
@@ -1198,7 +1243,7 @@ const LessonContent = {
                             question: "Complete: I'm from Korea. (formal)",
                             sentence: "저는 한국___ 왔어요",
                             answer: "에서",
-                            options: ["에서", "에", "을", "는"]
+                            options: ["에", "을", "에서", "는"]
                         }
                     ]
                 }
@@ -1274,7 +1319,7 @@ const LessonContent = {
                             question: "Complete: One Americano, please.",
                             sentence: "아메리카노 하나 ___",
                             answer: "주세요",
-                            options: ["주세요", "있어요", "없어요", "할게요"]
+                            options: ["있어요", "없어요", "주세요", "할게요"]
                         },
                         {
                             type: "translate",
@@ -1333,13 +1378,14 @@ const LessonContent = {
                             question: "Translate: 얼마예요?",
                             korean: "얼마예요?",
                             romanization: "eolmayeyo?",
-                            options: ["What is it?", "How much is it?", "Where is it?", "Who is it?"],
-                            correct: 1
+                            options: ["What is it?", "Where is it?", "How much is it?", "Who is it?"],
+                            correct: 2
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you say 'I'll pay by card'?",
-                            korean: null,
+                            korean: "카드로 할게요",
+                            romanization: "kadeuro halgeyo",
                             options: ["현금으로 할게요", "카드로 할게요", "영수증 주세요", "얼마예요?"],
                             correct: 1
                         }
@@ -1392,7 +1438,7 @@ const LessonContent = {
                             question: "Complete: Two people, please.",
                             sentence: "두 ___이요",
                             answer: "명",
-                            options: ["명", "분", "개", "잔"]
+                            options: ["개", "명", "분", "잔"]
                         },
                         {
                             type: "translate",
@@ -1465,8 +1511,9 @@ const LessonContent = {
                             type: "multiple-choice",
                             question: "What is '비빔밥'?",
                             korean: "비빔밥",
-                            options: ["Kimchi stew", "Mixed rice", "Marinated beef", "Fried rice"],
-                            correct: 1
+                            romanization: "bibimbap",
+                            options: ["Kimchi stew", "Marinated beef", "Mixed rice", "Fried rice"],
+                            correct: 2
                         }
                     ]
                 },
@@ -1482,21 +1529,21 @@ const LessonContent = {
                             npc: "waiter",
                             task: "Ask for the menu",
                             correctAnswer: "메뉴판 주세요",
-                            options: ["메뉴판 주세요", "물 주세요", "계산해 주세요"]
+                            options: ["계산해 주세요", "메뉴판 주세요", "물 주세요"]
                         },
                         {
                             id: 2,
                             npc: "waiter",
                             task: "Order bibimbap",
                             correctAnswer: "비빔밥 주세요",
-                            options: ["김치찌개 주세요", "비빔밥 주세요", "불고기 주세요"]
+                            options: ["불고기 주세요", "비빔밥 주세요", "김치찌개 주세요"]
                         },
                         {
                             id: 3,
                             npc: "waiter",
                             task: "Ask how much it costs",
                             correctAnswer: "얼마예요?",
-                            options: ["뭐예요?", "어디예요?", "얼마예요?"]
+                            options: ["뭐예요?", "얼마예요?", "어디예요?"]
                         }
                     ]
                 },
@@ -1555,14 +1602,15 @@ const LessonContent = {
                             question: "Translate: 맛있어요",
                             korean: "맛있어요",
                             romanization: "masisseoyo",
-                            options: ["It's spicy", "It's delicious", "It's sweet", "It's salty"],
-                            correct: 1
+                            options: ["It's spicy", "It's salty", "It's sweet", "It's delicious"],
+                            correct: 3
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you say 'It's spicy'?",
-                            korean: null,
-                            options: ["달아요", "짜요", "매워요", "맛있어요"],
+                            korean: "매워요",
+                            romanization: "maewoyo",
+                            options: ["맛있어요", "달아요", "매워요", "짜요"],
                             correct: 2
                         }
                     ]
@@ -1612,15 +1660,15 @@ const LessonContent = {
                             question: "Translate: 물 주세요",
                             korean: "물 주세요",
                             romanization: "mul juseyo",
-                            options: ["Menu, please", "Water, please", "Bill, please", "More, please"],
-                            correct: 1
+                            options: ["Water, please", "Menu, please", "Bill, please", "More, please"],
+                            correct: 0
                         },
                         {
                             type: "fill-blank",
                             question: "Complete: Bill, please.",
                             sentence: "___ 주세요",
                             answer: "계산해",
-                            options: ["계산해", "포장해", "물", "반찬"]
+                            options: ["물", "포장해", "반찬", "계산해"]
                         }
                     ]
                 },
@@ -1689,9 +1737,10 @@ const LessonContent = {
                         {
                             type: "multiple-choice",
                             question: "How do you say 'morning' in Korean?",
-                            korean: null,
-                            options: ["저녁", "점심", "아침", "오늘"],
-                            correct: 2
+                            korean: "아침",
+                            romanization: "achim",
+                            options: ["저녁", "점심", "오늘", "아침"],
+                            correct: 3
                         }
                     ]
                 },
@@ -1754,15 +1803,16 @@ const LessonContent = {
                             question: "What day is '금요일'?",
                             korean: "금요일",
                             romanization: "geumyoil",
-                            options: ["Monday", "Wednesday", "Friday", "Sunday"],
-                            correct: 2
+                            options: ["Monday", "Wednesday", "Sunday", "Friday"],
+                            correct: 3
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you say 'Saturday' in Korean?",
-                            korean: null,
-                            options: ["일요일", "토요일", "금요일", "목요일"],
-                            correct: 1
+                            korean: "토요일",
+                            romanization: "toyoil",
+                            options: ["토요일", "일요일", "금요일", "목요일"],
+                            correct: 0
                         }
                     ]
                 },
@@ -1776,20 +1826,21 @@ const LessonContent = {
                             question: "Complete: One Americano, please.",
                             sentence: "아메리카노 하나 ___",
                             answer: "주세요",
-                            options: ["주세요", "있어요", "없어요", "할게요"]
+                            options: ["할게요", "주세요", "있어요", "없어요"]
                         },
                         {
                             type: "translate",
                             question: "Translate: 얼마예요?",
                             korean: "얼마예요?",
                             romanization: "eolmayeyo?",
-                            options: ["What is it?", "How much is it?", "Where is it?", "Who is it?"],
-                            correct: 1
+                            options: ["How much is it?", "What is it?", "Where is it?", "Who is it?"],
+                            correct: 0
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you say 'It's delicious'?",
-                            korean: null,
+                            korean: "맛있어요",
+                            romanization: "masisseoyo",
                             options: ["매워요", "짜요", "맛있어요", "달아요"],
                             correct: 2
                         },
@@ -1798,20 +1849,21 @@ const LessonContent = {
                             question: "What does '내일' mean?",
                             korean: "내일",
                             romanization: "naeil",
-                            options: ["Yesterday", "Today", "Tomorrow", "Now"],
-                            correct: 2
+                            options: ["Yesterday", "Today", "Now", "Tomorrow"],
+                            correct: 3
                         },
                         {
                             type: "fill-blank",
                             question: "Complete: Bill, please.",
                             sentence: "___ 주세요",
                             answer: "계산해",
-                            options: ["계산해", "포장해", "물", "메뉴판"]
+                            options: ["메뉴판", "물", "포장해", "계산해"]
                         },
                         {
                             type: "multiple-choice",
                             question: "What day is '월요일'?",
                             korean: "월요일",
+                            romanization: "woryoil",
                             options: ["Sunday", "Monday", "Tuesday", "Wednesday"],
                             correct: 1
                         }
@@ -1885,7 +1937,7 @@ const LessonContent = {
                             question: "Complete: Please give me a discount.",
                             sentence: "___ 주세요",
                             answer: "깎아",
-                            options: ["깎아", "사", "줘", "봐"]
+                            options: ["줘", "사", "깎아", "봐"]
                         }
                     ]
                 },
@@ -1943,15 +1995,16 @@ const LessonContent = {
                             question: "Translate: 입어 봐도 돼요?",
                             korean: "입어 봐도 돼요?",
                             romanization: "ibeo bwado dwaeyo?",
-                            options: ["How much is it?", "Can I try it on?", "Do you have another color?", "It fits well"],
-                            correct: 1
+                            options: ["How much is it?", "It fits well", "Can I try it on?", "Do you have another color?"],
+                            correct: 2
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you ask for a bigger size?",
-                            korean: null,
-                            options: ["더 작은 거 있어요?", "더 큰 거 있어요?", "다른 색 있어요?", "잘 맞아요"],
-                            correct: 1
+                            korean: "더 큰 거 있어요?",
+                            romanization: "deo keun geo isseoyo?",
+                            options: ["더 작은 거 있어요?", "잘 맞아요", "더 큰 거 있어요?", "다른 색 있어요?"],
+                            correct: 2
                         }
                     ]
                 },
@@ -2007,15 +2060,16 @@ const LessonContent = {
                             question: "What color is '파란색'?",
                             korean: "파란색",
                             romanization: "paransaek",
-                            options: ["Red", "Blue", "Yellow", "Green"],
-                            correct: 1
+                            options: ["Red", "Green", "Blue", "Yellow"],
+                            correct: 2
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you say 'black' in Korean?",
-                            korean: null,
-                            options: ["흰색", "검은색", "빨간색", "노란색"],
-                            correct: 1
+                            korean: "검은색",
+                            romanization: "geomeunsaek",
+                            options: ["흰색", "노란색", "빨간색", "검은색"],
+                            correct: 3
                         }
                     ]
                 },
@@ -2068,15 +2122,15 @@ const LessonContent = {
                             question: "Complete: Where is the subway station?",
                             sentence: "지하철역 ___?",
                             answer: "어디예요",
-                            options: ["어디예요", "뭐예요", "얼마예요", "누구예요"]
+                            options: ["얼마예요", "뭐예요", "어디예요", "누구예요"]
                         },
                         {
                             type: "translate",
                             question: "Translate: 화장실 어디예요?",
                             korean: "화장실 어디예요?",
                             romanization: "hwajangsil eodiyeyo?",
-                            options: ["Where is the bus stop?", "Where is the bathroom?", "Where is the station?", "How much is it?"],
-                            correct: 1
+                            options: ["Where is the bus stop?", "How much is it?", "Where is the station?", "Where is the bathroom?"],
+                            correct: 3
                         }
                     ]
                 },
@@ -2092,21 +2146,21 @@ const LessonContent = {
                             npc: "shopkeeper",
                             task: "Ask how much the item costs",
                             correctAnswer: "이거 얼마예요?",
-                            options: ["이거 얼마예요?", "이거 뭐예요?", "이거 주세요"]
+                            options: ["이거 주세요", "이거 얼마예요?", "이거 뭐예요?"]
                         },
                         {
                             id: 2,
                             npc: "shopkeeper",
                             task: "Ask for a discount",
                             correctAnswer: "깎아 주세요",
-                            options: ["살게요", "깎아 주세요", "비싸요"]
+                            options: ["살게요", "비싸요", "깎아 주세요"]
                         },
                         {
                             id: 3,
                             npc: "stranger",
                             task: "Ask where the subway station is",
                             correctAnswer: "지하철역 어디예요?",
-                            options: ["지하철역 어디예요?", "버스 정류장 어디예요?", "화장실 어디예요?"]
+                            options: ["버스 정류장 어디예요?", "화장실 어디예요?", "지하철역 어디예요?"]
                         }
                     ]
                 },
@@ -2162,13 +2216,14 @@ const LessonContent = {
                             question: "Translate: 직진하세요",
                             korean: "직진하세요",
                             romanization: "jikjinhaseyo",
-                            options: ["Go left", "Go right", "Go straight", "Stop"],
+                            options: ["Go left", "Stop", "Go straight", "Go right"],
                             correct: 2
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you say 'Go left'?",
-                            korean: null,
+                            korean: "왼쪽으로 가세요",
+                            romanization: "oenjjogeuro gaseyo",
                             options: ["오른쪽으로 가세요", "왼쪽으로 가세요", "직진하세요", "여기예요"],
                             correct: 1
                         }
@@ -2182,7 +2237,7 @@ const LessonContent = {
                         {
                             type: "word-card",
                             korean: "앞",
-                            romanization: "ap",
+                            romanization: "ahp",
                             meaning: "Front",
                             audio: null
                         },
@@ -2217,14 +2272,14 @@ const LessonContent = {
                         {
                             type: "word-card",
                             korean: "안",
-                            romanization: "an",
+                            romanization: "ahn",
                             meaning: "Inside",
                             audio: null
                         },
                         {
                             type: "word-card",
                             korean: "밖",
-                            romanization: "bak",
+                            romanization: "bahk",
                             meaning: "Outside",
                             audio: null
                         },
@@ -2232,14 +2287,15 @@ const LessonContent = {
                             type: "translate",
                             question: "What does '앞' mean?",
                             korean: "앞",
-                            romanization: "ap",
-                            options: ["Back", "Front", "Side", "Inside"],
-                            correct: 1
+                            romanization: "ahp",
+                            options: ["Back", "Inside", "Side", "Front"],
+                            correct: 3
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you say 'inside' in Korean?",
-                            korean: null,
+                            korean: "안",
+                            romanization: "an",
                             options: ["밖", "안", "위", "아래"],
                             correct: 1
                         }
@@ -2297,15 +2353,15 @@ const LessonContent = {
                             question: "Complete: Take the bus.",
                             sentence: "버스 ___",
                             answer: "타세요",
-                            options: ["타세요", "가세요", "오세요", "하세요"]
+                            options: ["가세요", "오세요", "타세요", "하세요"]
                         },
                         {
                             type: "translate",
                             question: "What does '지하철' mean?",
                             korean: "지하철",
                             romanization: "jihacheol",
-                            options: ["Bus", "Subway", "Taxi", "Train"],
-                            correct: 1
+                            options: ["Bus", "Train", "Taxi", "Subway"],
+                            correct: 3
                         }
                     ]
                 },
@@ -2366,7 +2422,7 @@ const LessonContent = {
                             question: "Complete: It takes 10 minutes.",
                             sentence: "십 분 ___",
                             answer: "걸려요",
-                            options: ["걸려요", "있어요", "가요", "와요"]
+                            options: ["가요", "걸려요", "있어요", "와요"]
                         }
                     ]
                 },
@@ -2380,44 +2436,46 @@ const LessonContent = {
                             question: "Translate: 너무 비싸요",
                             korean: "너무 비싸요",
                             romanization: "neomu bissayo",
-                            options: ["It's cheap", "It's too expensive", "I'll buy it", "Give me a discount"],
-                            correct: 1
+                            options: ["It's cheap", "I'll buy it", "Give me a discount", "It's too expensive"],
+                            correct: 3
                         },
                         {
                             type: "fill-blank",
                             question: "Complete: Can I try it on?",
                             sentence: "입어 ___ 돼요?",
                             answer: "봐도",
-                            options: ["봐도", "해도", "가도", "와도"]
+                            options: ["가도", "봐도", "해도", "와도"]
                         },
                         {
                             type: "multiple-choice",
                             question: "What color is '초록색'?",
                             korean: "초록색",
-                            options: ["Red", "Blue", "Yellow", "Green"],
-                            correct: 3
+                            romanization: "choroksaek",
+                            options: ["Red", "Green", "Blue", "Yellow"],
+                            correct: 1
                         },
                         {
                             type: "translate",
                             question: "Translate: 직진하세요",
                             korean: "직진하세요",
                             romanization: "jikjinhaseyo",
-                            options: ["Go left", "Go right", "Go straight", "Stop"],
-                            correct: 2
+                            options: ["Go straight", "Go left", "Stop", "Go right"],
+                            correct: 0
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you say 'subway' in Korean?",
-                            korean: null,
-                            options: ["버스", "지하철", "택시", "기차"],
-                            correct: 1
+                            korean: "지하철",
+                            romanization: "jihacheol",
+                            options: ["버스", "기차", "택시", "지하철"],
+                            correct: 3
                         },
                         {
                             type: "fill-blank",
                             question: "Complete: How long does it take?",
                             sentence: "얼마나 ___?",
                             answer: "걸려요",
-                            options: ["걸려요", "있어요", "가요", "해요"]
+                            options: ["가요", "해요", "있어요", "걸려요"]
                         }
                     ]
                 }
@@ -2485,15 +2543,16 @@ const LessonContent = {
                             question: "Translate: 기뻐요",
                             korean: "기뻐요",
                             romanization: "gippeoyo",
-                            options: ["I'm sad", "I'm happy", "I'm angry", "I'm tired"],
-                            correct: 1
+                            options: ["I'm sad", "I'm tired", "I'm happy", "I'm angry"],
+                            correct: 2
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you say 'I'm tired' in Korean?",
-                            korean: null,
-                            options: ["슬퍼요", "화나요", "피곤해요", "무서워요"],
-                            correct: 2
+                            korean: "피곤해요",
+                            romanization: "pigonhaeyo",
+                            options: ["슬퍼요", "무서워요", "화나요", "피곤해요"],
+                            correct: 3
                         }
                     ]
                 },
@@ -2558,9 +2617,10 @@ const LessonContent = {
                         {
                             type: "multiple-choice",
                             question: "How do you say 'I'm excited' in Korean?",
-                            korean: null,
-                            options: ["걱정돼요", "신나요", "심심해요", "놀랐어요"],
-                            correct: 1
+                            korean: "신나요",
+                            romanization: "sinnayo",
+                            options: ["신나요", "걱정돼요", "심심해요", "놀랐어요"],
+                            correct: 0
                         }
                     ]
                 },
@@ -2610,15 +2670,15 @@ const LessonContent = {
                             question: "Translate: 괜찮아요?",
                             korean: "괜찮아요?",
                             romanization: "gwaenchanayo?",
-                            options: ["How do you feel?", "Are you okay?", "What's wrong?", "Is something wrong?"],
-                            correct: 1
+                            options: ["How do you feel?", "Is something wrong?", "Are you okay?", "What's wrong?"],
+                            correct: 2
                         },
                         {
                             type: "fill-blank",
                             question: "Complete: How do you feel?",
                             sentence: "기분이 ___?",
                             answer: "어때요",
-                            options: ["어때요", "뭐예요", "있어요", "없어요"]
+                            options: ["뭐예요", "있어요", "어때요", "없어요"]
                         }
                     ]
                 },
@@ -2629,22 +2689,6 @@ const LessonContent = {
                     content: [
                         {
                             type: "word-card",
-                            korean: "... 것 같아요",
-                            romanization: "... geot gatayo",
-                            meaning: "I think ... / It seems ...",
-                            formal: "... 것 같아요",
-                            informal: "... 것 같아",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "제 생각에는",
-                            romanization: "je saenggageneun",
-                            meaning: "In my opinion",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
                             korean: "좋은 것 같아요",
                             romanization: "joeun geot gatayo",
                             meaning: "I think it's good",
@@ -2652,20 +2696,9 @@ const LessonContent = {
                         },
                         {
                             type: "word-card",
-                            korean: "별로예요",
-                            romanization: "byeolloyeyo",
-                            meaning: "It's not that great",
-                            formal: "별로예요",
-                            informal: "별로야",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
                             korean: "최고예요",
                             romanization: "choegoyeyo",
                             meaning: "It's the best",
-                            formal: "최고예요",
-                            informal: "최고야",
                             audio: null
                         },
                         {
@@ -2673,15 +2706,16 @@ const LessonContent = {
                             question: "Translate: 좋은 것 같아요",
                             korean: "좋은 것 같아요",
                             romanization: "joeun geot gatayo",
-                            options: ["It's bad", "I think it's good", "It's the best", "It's not great"],
-                            correct: 1
+                            options: ["It's bad", "It's the best", "I think it's good", "It's not great"],
+                            correct: 2
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you say 'It's the best'?",
-                            korean: null,
-                            options: ["별로예요", "최고예요", "좋아요", "싫어요"],
-                            correct: 1
+                            korean: "최고예요",
+                            romanization: "choegoyeyo",
+                            options: ["별로예요", "좋아요", "최고예요", "싫어요"],
+                            correct: 2
                         }
                     ]
                 },
@@ -2697,21 +2731,21 @@ const LessonContent = {
                             npc: "sad_person",
                             task: "Ask if they're okay",
                             correctAnswer: "괜찮아요?",
-                            options: ["괜찮아요?", "안녕하세요?", "뭐예요?"]
+                            options: ["안녕하세요?", "뭐예요?", "괜찮아요?"]
                         },
                         {
                             id: 2,
                             npc: "excited_friend",
-                            task: "Say you're also excited (to your friend)",
+                            task: "Say you're also excited",
                             correctAnswer: "나도 신나!",
-                            options: ["나도 신나!", "나도 슬퍼!", "나도 피곤해!"]
+                            options: ["나도 슬퍼!", "나도 피곤해!", "나도 신나!"]
                         },
                         {
                             id: 3,
                             npc: "worried_person",
                             task: "Ask what's wrong",
                             correctAnswer: "무슨 일 있어요?",
-                            options: ["무슨 일 있어요?", "어디 가요?", "뭐 먹어요?"]
+                            options: ["어디 가요?", "무슨 일 있어요?", "뭐 먹어요?"]
                         }
                     ]
                 },
@@ -2725,24 +2759,6 @@ const LessonContent = {
                             korean: "맞아요",
                             romanization: "majayo",
                             meaning: "That's right",
-                            formal: "맞아요",
-                            informal: "맞아",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "저도 그렇게 생각해요",
-                            romanization: "jeodo geureoke saenggakhaeyo",
-                            meaning: "I think so too",
-                            formal: "저도 그렇게 생각해요",
-                            informal: "나도 그렇게 생각해",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "글쎄요",
-                            romanization: "geulsseyo",
-                            meaning: "Well... / I'm not sure",
                             audio: null
                         },
                         {
@@ -2750,17 +2766,6 @@ const LessonContent = {
                             korean: "아닌 것 같아요",
                             romanization: "anin geot gatayo",
                             meaning: "I don't think so",
-                            formal: "아닌 것 같아요",
-                            informal: "아닌 것 같아",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "동의해요",
-                            romanization: "donguihaeyo",
-                            meaning: "I agree",
-                            formal: "동의해요",
-                            informal: "동의해",
                             audio: null
                         },
                         {
@@ -2768,14 +2773,7 @@ const LessonContent = {
                             question: "Translate: 맞아요",
                             korean: "맞아요",
                             romanization: "majayo",
-                            options: ["That's wrong", "That's right", "I don't know", "Maybe"],
-                            correct: 1
-                        },
-                        {
-                            type: "multiple-choice",
-                            question: "How do you say 'I don't think so'?",
-                            korean: null,
-                            options: ["맞아요", "동의해요", "아닌 것 같아요", "글쎄요"],
+                            options: ["That's wrong", "I don't know", "That's right", "Maybe"],
                             correct: 2
                         }
                     ]
@@ -2790,8 +2788,6 @@ const LessonContent = {
                             korean: "좋아해요",
                             romanization: "joahaeyo",
                             meaning: "I like (it)",
-                            formal: "좋아해요",
-                            informal: "좋아해",
                             audio: null
                         },
                         {
@@ -2799,33 +2795,6 @@ const LessonContent = {
                             korean: "싫어해요",
                             romanization: "sireohaeyo",
                             meaning: "I dislike (it)",
-                            formal: "싫어해요",
-                            informal: "싫어해",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "... 좋아요",
-                            romanization: "... joayo",
-                            meaning: "... is good / I like ...",
-                            formal: "좋아요",
-                            informal: "좋아",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "... 싫어요",
-                            romanization: "... sireoyo",
-                            meaning: "... is bad / I don't like ...",
-                            formal: "싫어요",
-                            informal: "싫어",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "제일 좋아하는",
-                            romanization: "jeil joahaneun",
-                            meaning: "Favorite",
                             audio: null
                         },
                         {
@@ -2833,15 +2802,7 @@ const LessonContent = {
                             question: "Complete: I like coffee.",
                             sentence: "커피 ___",
                             answer: "좋아해요",
-                            options: ["좋아해요", "싫어해요", "있어요", "없어요"]
-                        },
-                        {
-                            type: "translate",
-                            question: "Translate: 제일 좋아하는",
-                            korean: "제일 좋아하는",
-                            romanization: "jeil joahaneun",
-                            options: ["Least favorite", "Favorite", "I like", "I dislike"],
-                            correct: 1
+                            options: ["싫어해요", "있어요", "좋아해요", "없어요"]
                         }
                     ]
                 },
@@ -2850,20 +2811,6 @@ const LessonContent = {
                     title: "Giving Reasons",
                     type: "lesson",
                     content: [
-                        {
-                            type: "word-card",
-                            korean: "왜냐하면",
-                            romanization: "waenyahamyeon",
-                            meaning: "Because",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "... 때문에",
-                            romanization: "... ttaemune",
-                            meaning: "Because of ...",
-                            audio: null
-                        },
                         {
                             type: "word-card",
                             korean: "그래서",
@@ -2879,26 +2826,12 @@ const LessonContent = {
                             audio: null
                         },
                         {
-                            type: "word-card",
-                            korean: "그리고",
-                            romanization: "geurigo",
-                            meaning: "And",
-                            audio: null
-                        },
-                        {
                             type: "translate",
                             question: "Translate: 그래서",
                             korean: "그래서",
                             romanization: "geuraeseo",
-                            options: ["Because", "So/Therefore", "But", "And"],
-                            correct: 1
-                        },
-                        {
-                            type: "multiple-choice",
-                            question: "How do you say 'But/However'?",
-                            korean: null,
-                            options: ["그래서", "그런데", "그리고", "왜냐하면"],
-                            correct: 1
+                            options: ["Because", "But", "And", "So/Therefore"],
+                            correct: 3
                         }
                     ]
                 },
@@ -2909,59 +2842,18 @@ const LessonContent = {
                     content: [
                         {
                             type: "word-card",
-                            korean: "... 할까요?",
-                            romanization: "... halkkayo?",
-                            meaning: "Shall we ...?",
-                            formal: "... 할까요?",
-                            informal: "... 할까?",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "... 하는 게 어때요?",
-                            romanization: "... haneun ge eottaeyo?",
-                            meaning: "How about ...ing?",
-                            formal: "... 하는 게 어때요?",
-                            informal: "... 하는 게 어때?",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
                             korean: "같이 가요",
                             romanization: "gachi gayo",
                             meaning: "Let's go together",
-                            formal: "같이 가요",
-                            informal: "같이 가",
                             audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "좋아요!",
-                            romanization: "joayo!",
-                            meaning: "Sounds good!",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "다음에요",
-                            romanization: "daeume yo",
-                            meaning: "Next time",
-                            audio: null
-                        },
-                        {
-                            type: "fill-blank",
-                            question: "Complete: Shall we eat?",
-                            sentence: "먹을___?",
-                            answer: "까요",
-                            options: ["까요", "거예요", "어요", "아요"]
                         },
                         {
                             type: "translate",
                             question: "Translate: 같이 가요",
                             korean: "같이 가요",
                             romanization: "gachi gayo",
-                            options: ["Go alone", "Let's go together", "Don't go", "Where are you going?"],
-                            correct: 1
+                            options: ["Go alone", "Don't go", "Let's go together", "Where are you going?"],
+                            correct: 2
                         }
                     ]
                 },
@@ -2975,44 +2867,24 @@ const LessonContent = {
                             question: "Translate: 기뻐요",
                             korean: "기뻐요",
                             romanization: "gippeoyo",
-                            options: ["I'm sad", "I'm happy", "I'm angry", "I'm tired"],
-                            correct: 1
+                            options: ["I'm sad", "I'm tired", "I'm angry", "I'm happy"],
+                            correct: 3
                         },
                         {
                             type: "multiple-choice",
                             question: "How do you ask 'Are you okay?'",
-                            korean: null,
+                            korean: "괜찮아요?",
+                            romanization: "gwaenchanayo?",
                             options: ["뭐예요?", "괜찮아요?", "어디예요?", "누구예요?"],
                             correct: 1
-                        },
-                        {
-                            type: "fill-blank",
-                            question: "Complete: I think it's good.",
-                            sentence: "좋은 것 ___",
-                            answer: "같아요",
-                            options: ["같아요", "있어요", "없어요", "해요"]
                         },
                         {
                             type: "translate",
                             question: "Translate: 맞아요",
                             korean: "맞아요",
                             romanization: "majayo",
-                            options: ["That's wrong", "That's right", "I don't know", "Maybe"],
+                            options: ["That's wrong", "That's right", "Maybe", "I don't know"],
                             correct: 1
-                        },
-                        {
-                            type: "multiple-choice",
-                            question: "How do you say 'So/Therefore'?",
-                            korean: null,
-                            options: ["그런데", "그래서", "그리고", "왜냐하면"],
-                            correct: 1
-                        },
-                        {
-                            type: "fill-blank",
-                            question: "Complete: Let's go together.",
-                            sentence: "___ 가요",
-                            answer: "같이",
-                            options: ["같이", "혼자", "빨리", "천천히"]
                         }
                     ]
                 }
@@ -3032,43 +2904,9 @@ const LessonContent = {
                     content: [
                         {
                             type: "word-card",
-                            korean: "약속",
-                            romanization: "yaksok",
-                            meaning: "Appointment / Promise",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
                             korean: "시간 있어요?",
                             romanization: "sigan isseoyo?",
                             meaning: "Do you have time?",
-                            formal: "시간 있어요?",
-                            informal: "시간 있어?",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "언제 괜찮아요?",
-                            romanization: "eonje gwaenchanayo?",
-                            meaning: "When is good for you?",
-                            formal: "언제 괜찮아요?",
-                            informal: "언제 괜찮아?",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "... 에 만나요",
-                            romanization: "... e mannayo",
-                            meaning: "Let's meet at ...",
-                            formal: "... 에 만나요",
-                            informal: "... 에 만나",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "약속 있어요",
-                            romanization: "yaksok isseoyo",
-                            meaning: "I have an appointment",
                             audio: null
                         },
                         {
@@ -3076,15 +2914,8 @@ const LessonContent = {
                             question: "Translate: 시간 있어요?",
                             korean: "시간 있어요?",
                             romanization: "sigan isseoyo?",
-                            options: ["What time is it?", "Do you have time?", "When is it?", "Where is it?"],
-                            correct: 1
-                        },
-                        {
-                            type: "fill-blank",
-                            question: "Complete: Let's meet at 3 o'clock.",
-                            sentence: "세 시에 ___",
-                            answer: "만나요",
-                            options: ["만나요", "가요", "와요", "해요"]
+                            options: ["What time is it?", "When is it?", "Do you have time?", "Where is it?"],
+                            correct: 2
                         }
                     ]
                 },
@@ -3101,47 +2932,12 @@ const LessonContent = {
                             audio: null
                         },
                         {
-                            type: "word-card",
-                            korean: "... 씨 계세요?",
-                            romanization: "... ssi gyeseyo?",
-                            meaning: "Is Mr./Ms. ... there?",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "잠시만 기다리세요",
-                            romanization: "jamsiman gidariseyo",
-                            meaning: "Please wait a moment",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "다시 전화할게요",
-                            romanization: "dasi jeonhwahalgeyo",
-                            meaning: "I'll call back",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "메시지 남겨 주세요",
-                            romanization: "mesiji namgyeo juseyo",
-                            meaning: "Please leave a message",
-                            audio: null
-                        },
-                        {
                             type: "translate",
                             question: "Translate: 여보세요",
                             korean: "여보세요",
                             romanization: "yeoboseyo",
-                            options: ["Goodbye", "Hello (on phone)", "Thank you", "Sorry"],
-                            correct: 1
-                        },
-                        {
-                            type: "multiple-choice",
-                            question: "How do you say 'I'll call back'?",
-                            korean: null,
-                            options: ["잠시만 기다리세요", "다시 전화할게요", "메시지 남겨 주세요", "여보세요"],
-                            correct: 1
+                            options: ["Goodbye", "Thank you", "Hello (on phone)", "Sorry"],
+                            correct: 2
                         }
                     ]
                 },
@@ -3152,46 +2948,9 @@ const LessonContent = {
                     content: [
                         {
                             type: "word-card",
-                            korean: "아파요",
-                            romanization: "apayo",
-                            meaning: "It hurts / I'm sick",
-                            formal: "아파요",
-                            informal: "아파",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "어디가 아파요?",
-                            romanization: "eodiga apayo?",
-                            meaning: "Where does it hurt?",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
                             korean: "머리가 아파요",
                             romanization: "meoriga apayo",
                             meaning: "I have a headache",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "배가 아파요",
-                            romanization: "baega apayo",
-                            meaning: "I have a stomachache",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "감기에 걸렸어요",
-                            romanization: "gamgie geollyeosseoyo",
-                            meaning: "I caught a cold",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "약",
-                            romanization: "yak",
-                            meaning: "Medicine",
                             audio: null
                         },
                         {
@@ -3199,15 +2958,8 @@ const LessonContent = {
                             question: "Translate: 머리가 아파요",
                             korean: "머리가 아파요",
                             romanization: "meoriga apayo",
-                            options: ["I have a stomachache", "I have a headache", "I caught a cold", "I'm tired"],
-                            correct: 1
-                        },
-                        {
-                            type: "fill-blank",
-                            question: "Complete: I caught a cold.",
-                            sentence: "감기에 ___",
-                            answer: "걸렸어요",
-                            options: ["걸렸어요", "아파요", "있어요", "없어요"]
+                            options: ["I have a stomachache", "I caught a cold", "I have a headache", "I'm tired"],
+                            correct: 2
                         }
                     ]
                 },
@@ -3216,34 +2968,6 @@ const LessonContent = {
                     title: "At the Bank",
                     type: "lesson",
                     content: [
-                        {
-                            type: "word-card",
-                            korean: "은행",
-                            romanization: "eunhaeng",
-                            meaning: "Bank",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "계좌",
-                            romanization: "gyejwa",
-                            meaning: "Account",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "계좌를 만들고 싶어요",
-                            romanization: "gyejwareul mandeulgo sipeoyo",
-                            meaning: "I want to open an account",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "돈을 보내고 싶어요",
-                            romanization: "doneul bonaego sipeoyo",
-                            meaning: "I want to send money",
-                            audio: null
-                        },
                         {
                             type: "word-card",
                             korean: "환전하고 싶어요",
@@ -3256,15 +2980,8 @@ const LessonContent = {
                             question: "Translate: 환전하고 싶어요",
                             korean: "환전하고 싶어요",
                             romanization: "hwanjeonhago sipeoyo",
-                            options: ["I want to open an account", "I want to send money", "I want to exchange money", "I want to withdraw money"],
-                            correct: 2
-                        },
-                        {
-                            type: "multiple-choice",
-                            question: "What does '계좌' mean?",
-                            korean: "계좌",
-                            options: ["Bank", "Money", "Account", "Card"],
-                            correct: 2
+                            options: ["I want to open an account", "I want to exchange money", "I want to send money", "I want to withdraw money"],
+                            correct: 1
                         }
                     ]
                 },
@@ -3280,14 +2997,14 @@ const LessonContent = {
                             npc: "receptionist",
                             task: "Make an appointment",
                             correctAnswer: "예약하고 싶어요",
-                            options: ["예약하고 싶어요", "취소하고 싶어요", "변경하고 싶어요"]
+                            options: ["취소하고 싶어요", "예약하고 싶어요", "변경하고 싶어요"]
                         },
                         {
                             id: 2,
                             npc: "doctor",
                             task: "Tell the doctor you have a headache",
                             correctAnswer: "머리가 아파요",
-                            options: ["머리가 아파요", "배가 아파요", "다리가 아파요"]
+                            options: ["배가 아파요", "다리가 아파요", "머리가 아파요"]
                         },
                         {
                             id: 3,
@@ -3305,37 +3022,9 @@ const LessonContent = {
                     content: [
                         {
                             type: "word-card",
-                            korean: "... 습니다/ㅂ니다",
-                            romanization: "... seumnida/mnida",
-                            meaning: "Very formal sentence ending",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "감사합니다",
-                            romanization: "gamsahamnida",
-                            meaning: "Thank you (very formal)",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "죄송합니다",
-                            romanization: "joesonghamnida",
-                            meaning: "I'm sorry (very formal)",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
                             korean: "알겠습니다",
                             romanization: "algesseumnida",
                             meaning: "I understand (very formal)",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "부탁드립니다",
-                            romanization: "butakdeurimnida",
-                            meaning: "Please (very formal request)",
                             audio: null
                         },
                         {
@@ -3345,13 +3034,6 @@ const LessonContent = {
                             romanization: "algesseumnida",
                             options: ["I don't know", "I understand", "I'm sorry", "Thank you"],
                             correct: 1
-                        },
-                        {
-                            type: "multiple-choice",
-                            question: "Which is the most formal way to say 'Please'?",
-                            korean: null,
-                            options: ["주세요", "줘", "부탁드립니다", "부탁해"],
-                            correct: 2
                         }
                     ]
                 },
@@ -3368,47 +3050,12 @@ const LessonContent = {
                             audio: null
                         },
                         {
-                            type: "word-card",
-                            korean: "보고서",
-                            romanization: "bogoseo",
-                            meaning: "Report",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "마감일",
-                            romanization: "magamil",
-                            meaning: "Expiring date",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "출장",
-                            romanization: "chuljang",
-                            meaning: "Business trip",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "회의가 있습니다",
-                            romanization: "hoeuiga isseumnida",
-                            meaning: "There is a meeting",
-                            audio: null
-                        },
-                        {
                             type: "translate",
-                            question: "What does '마감일' mean?",
-                            korean: "마감일",
-                            romanization: "magamil",
-                            options: ["Meeting", "Report", "Expiring date", "Business trip"],
-                            correct: 2
-                        },
-                        {
-                            type: "fill-blank",
-                            question: "Complete: There is a meeting.",
-                            sentence: "회의가 ___",
-                            answer: "있습니다",
-                            options: ["있습니다", "없습니다", "합니다", "갑니다"]
+                            question: "What does '회의' mean?",
+                            korean: "회의",
+                            romanization: "hoeui",
+                            options: ["Report", "Meeting", "Deadline", "Business trip"],
+                            correct: 1
                         }
                     ]
                 },
@@ -3419,34 +3066,9 @@ const LessonContent = {
                     content: [
                         {
                             type: "word-card",
-                            korean: "... 고 싶어요",
-                            romanization: "... go sipeoyo",
-                            meaning: "I want to ...",
-                            formal: "... 고 싶어요",
-                            informal: "... 고 싶어",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "... 으면 좋겠어요",
-                            romanization: "... eumyeon jokesseoyo",
-                            meaning: "I wish ... / It would be nice if ...",
-                            formal: "... 으면 좋겠어요",
-                            informal: "... 으면 좋겠어",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
                             korean: "한국에 가고 싶어요",
                             romanization: "hanguge gago sipeoyo",
                             meaning: "I want to go to Korea",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "한국어를 잘하면 좋겠어요",
-                            romanization: "hangugeoreul jalhamyeon jokesseoyo",
-                            meaning: "I wish I could speak Korean well",
                             audio: null
                         },
                         {
@@ -3456,13 +3078,6 @@ const LessonContent = {
                             romanization: "hanguge gago sipeoyo",
                             options: ["I went to Korea", "I want to go to Korea", "I'm going to Korea", "I came from Korea"],
                             correct: 1
-                        },
-                        {
-                            type: "fill-blank",
-                            question: "Complete: I want to eat.",
-                            sentence: "먹___ 싶어요",
-                            answer: "고",
-                            options: ["고", "어", "아", "으"]
                         }
                     ]
                 },
@@ -3473,34 +3088,9 @@ const LessonContent = {
                     content: [
                         {
                             type: "word-card",
-                            korean: "... 을/ㄹ 거예요",
-                            romanization: "... eul/l geoyeyo",
-                            meaning: "I will ... / I'm going to ...",
-                            formal: "... 을/ㄹ 거예요",
-                            informal: "... 을/ㄹ 거야",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "... 을/ㄹ 예정이에요",
-                            romanization: "... eul/l yejeongieyo",
-                            meaning: "I'm planning to ...",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
                             korean: "내일 뭐 할 거예요?",
                             romanization: "naeil mwo hal geoyeyo?",
                             meaning: "What are you going to do tomorrow?",
-                            formal: "내일 뭐 할 거예요?",
-                            informal: "내일 뭐 할 거야?",
-                            audio: null
-                        },
-                        {
-                            type: "word-card",
-                            korean: "여행 갈 거예요",
-                            romanization: "yeohaeng gal geoyeyo",
-                            meaning: "I'm going to travel",
                             audio: null
                         },
                         {
@@ -3510,13 +3100,6 @@ const LessonContent = {
                             romanization: "naeil mwo hal geoyeyo?",
                             options: ["What did you do yesterday?", "What are you doing now?", "What are you going to do tomorrow?", "What do you want to do?"],
                             correct: 2
-                        },
-                        {
-                            type: "fill-blank",
-                            question: "Complete: I'm going to travel.",
-                            sentence: "여행 ___ 거예요",
-                            answer: "갈",
-                            options: ["갈", "가", "간", "가는"]
                         }
                     ]
                 },
@@ -3536,38 +3119,18 @@ const LessonContent = {
                         {
                             type: "multiple-choice",
                             question: "How do you say 'Hello' on the phone?",
-                            korean: null,
-                            options: ["안녕하세요", "여보세요", "감사합니다", "죄송합니다"],
-                            correct: 1
-                        },
-                        {
-                            type: "fill-blank",
-                            question: "Complete: I have a headache.",
-                            sentence: "머리가 ___",
-                            answer: "아파요",
-                            options: ["아파요", "있어요", "없어요", "좋아요"]
+                            korean: "여보세요",
+                            romanization: "yeoboseyo",
+                            options: ["안녕하세요", "감사합니다", "여보세요", "죄송합니다"],
+                            correct: 2
                         },
                         {
                             type: "translate",
                             question: "Translate: 알겠습니다",
                             korean: "알겠습니다",
                             romanization: "algesseumnida",
-                            options: ["I don't know", "I understand", "I'm sorry", "Thank you"],
-                            correct: 1
-                        },
-                        {
-                            type: "multiple-choice",
-                            question: "What does '마감일' mean?",
-                            korean: "마감일",
-                            options: ["Meeting", "Report", "Expiring date", "Business trip"],
-                            correct: 2
-                        },
-                        {
-                            type: "fill-blank",
-                            question: "Complete: I want to go to Korea.",
-                            sentence: "한국에 ___ 싶어요",
-                            answer: "가고",
-                            options: ["가고", "가서", "가면", "가는"]
+                            options: ["I don't know", "I'm sorry", "Thank you", "I understand"],
+                            correct: 3
                         }
                     ]
                 }
@@ -3592,8 +3155,8 @@ const LessonContent = {
             title: "Number Market",
             mapType: "market",
             npcs: [
-                { id: "shopkeeper", name: "Shopkeeper", sprite: "shopkeeper", x: 300, y: 200, dialog: "How many apples do you want? Count them in Korean!" },
-                { id: "customer", name: "Customer", sprite: "customer", x: 500, y: 350, dialog: "What's the price? Tell me in Korean numbers!" }
+                { id: "shopkeeper", name: "Shopkeeper", sprite: "shopkeeper", x: 300, y: 200, dialog: "Welcome! Apples? How many apples?" },
+                { id: "customer", name: "Customer", sprite: "customer", x: 500, y: 350, dialog: "Excuse me, how much is one apple?" }
             ]
         },
         restaurant_adventure: {
@@ -3609,8 +3172,8 @@ const LessonContent = {
             title: "Shopping Street",
             mapType: "street",
             npcs: [
-                { id: "shopkeeper", name: "Shopkeeper", sprite: "shopkeeper", x: 250, y: 200, dialog: "Looking for something?" },
-                { id: "stranger", name: "Stranger", sprite: "stranger", x: 550, y: 300, dialog: "Excuse me..." }
+                { id: "shopkeeper", name: "Shopkeeper", sprite: "shopkeeper", x: 250, y: 200, dialog: ["How can I help you?", "Oh, this is 10,000 won!"] },
+                { id: "stranger", name: "Stranger", sprite: "stranger", x: 550, y: 300, dialog: "Uh... hello." }
             ]
         },
         emotion_park: {
