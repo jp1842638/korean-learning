@@ -3164,7 +3164,7 @@ const LessonContent = {
             title: "Restaurant Adventure",
             mapType: "restaurant",
             npcs: [
-                { id: "waiter", name: "Waiter", sprite: "waiter", x: 400, y: 150, dialog: "Welcome! Table for one?" }
+                { id: "waiter", name: "Waiter", sprite: "waiter", x: 400, y: 150, dialog: ["Welcome! Table for one?", "Here is the menu! What would you like?", "Here is bibimbap!"] }
             ]
         },
         shopping_street: {
