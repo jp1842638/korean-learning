@@ -21,28 +21,28 @@ const LessonContent = {
                             type: "word-card",
                             korean: "ㅏ",
                             romanization: "ah",
-                            meaning: "Vowel 'a' (as in 'father')",
+                            meaning: "Vowel 'a' (sounds like 'ah')",
                             audio: null
                         },
                         {
                             
                             korean: "ㅓ",
                             romanization: "uh",
-                            meaning: "Vowel 'uh' (as in 'sun')",
+                            meaning: "Vowel 'eo' (sounds like'uh')",
                             audio: null
                         },
                         {
                             type: "word-card",
                             korean: "ㅗ",
                             romanization: "oh",
-                            meaning: "Vowel 'o' (as in 'go')",
+                            meaning: "Vowel 'o' (sounds like 'oh')",
                             audio: null
                         },
                         {
                             type: "word-card",
                             korean: "ㅜ",
                             romanization: "ooh",
-                            meaning: "Vowel 'u' (as in 'moon')",
+                            meaning: "Vowel 'u' (sounds like 'ooh')",
                             audio: null
                         },
                         {
@@ -56,7 +56,7 @@ const LessonContent = {
                             type: "word-card",
                             korean: "ㅣ",
                             romanization: "i",
-                            meaning: "Vowel 'i' (as in 'see')",
+                            meaning: "Vowel 'i' (sounds like 'ee')",
                             audio: null
                         },
                         {
