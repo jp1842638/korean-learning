@@ -100,14 +100,14 @@ const LessonContent = {
                             type: "word-card",
                             korean: "ㄷ",
                             romanization: "d/t",
-                            meaning: "Consonant 'd' or sometimes 't'",
+                            meaning: "Consonant 'd' or very sometimes 't'",
                             audio: null
                         },
                         {
                             type: "word-card",
                             korean: "ㄹ",
-                            romanization: "r/l",
-                            meaning: "Consonant 'r' or 'l'",
+                            romanization: "r&l",
+                            meaning: "Consonant 'r' and 'l'",
                             audio: null
                         },
                         {
@@ -134,7 +134,7 @@ const LessonContent = {
                         },
                         {
                             type: "multiple-choice",
-                            question: "Which consonant can sound like 'r' or 'l'?",
+                            question: "Which consonant can sound like 'r' and 'l'?",
                             korean: "ㄹ",
                             romanization: "r/l",
                             options: ["ㅁ", "ㅂ", "ㄴ", "ㄹ"],
